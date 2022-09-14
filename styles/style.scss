@@ -1,0 +1,36 @@
+.d-flex{
+    display: flex;
+}
+
+.fc {
+    flex-direction: column;
+}
+
+.aic {
+    align-items: center;
+}
+
+.jcc {
+    justify-content: center;
+}
+
+.jcb {
+    justify-content: space-between;
+}
+
+.jce {
+    justify-content: flex-end;
+}
+
+.material-icons-sharp{
+    font-size: 15px;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+span[contenteditable=true]{
+    padding: 5px 20px;
+    background-color: rgba(0, 0, 0, 0.096);
+}
