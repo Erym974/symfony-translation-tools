@@ -19,8 +19,8 @@
 
         <div class="rounded border border-secondary px-5 py-2">
             <div class="form-groups mb-3">
-                <label for="locale" class="form-label">Default locale</label>
-                <input type="text" class="form-control" id="locale" name="locale" data-default-locale value="en">
+                <label for="language" class="form-label">Default language</label>
+                <input type="text" class="form-control" id="language" name="language" data-default-language value="en">
             </div>
 
             <div class="d-flex aic jce">
@@ -30,34 +30,34 @@
         </div>
 
         <div class="d-flex jce my-3">
-            <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#add-column-modal">Add locale</button>
+            <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#add-column-modal">Add language</button>
         </div>
 
         <div class="modal fade" id="add-column-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Add locale</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Add language</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="" id="new-locale">
+                    <form action="" id="new-language">
                         <div class="form-group">
-                            <label for="locale">Locale</label>
-                            <input type="text" class="form-control" id="locale" name="locale">
+                            <label for="language">Language</label>
+                            <input type="text" class="form-control" id="language" name="language">
                         </div>
                     </form>
-                    <ul class="suggered-locales">
-                        <li><button onClick="suggeredLocale('fr')" class="btn btn-outline-secondary">fr (France)</button></li>
-                        <li><button onClick="suggeredLocale('cn')" class="btn btn-outline-secondary">cn (China)</button></li>
-                        <li><button onClick="suggeredLocale('es')" class="btn btn-outline-secondary">es (Spain)</button></li>
-                        <li><button onClick="suggeredLocale('de')" class="btn btn-outline-secondary">de (Germany)</button></li>
-                        <li><button onClick="suggeredLocale('ru')" class="btn btn-outline-secondary">ru (Russian)</button></li>
+                    <ul class="suggested-languages">
+                        <li><button onClick="suggeredLanguage('fr')" class="btn btn-outline-secondary">fr (France)</button></li>
+                        <li><button onClick="suggeredLanguage('cn')" class="btn btn-outline-secondary">cn (China)</button></li>
+                        <li><button onClick="suggeredLanguage('es')" class="btn btn-outline-secondary">es (Spain)</button></li>
+                        <li><button onClick="suggeredLanguage('de')" class="btn btn-outline-secondary">de (Germany)</button></li>
+                        <li><button onClick="suggeredLanguage('ru')" class="btn btn-outline-secondary">ru (Russian)</button></li>
                     </ul>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" form="new-locale" data-bs-dismiss="modal" class="btn btn-primary">Add </button>
+                    <button type="submit" form="new-language" data-bs-dismiss="modal" class="btn btn-primary">Add </button>
                 </div>
             </div>
             </div>
@@ -66,14 +66,17 @@
         <table class="table">
             <thead>
                 <tr id="table-header">
-                    <th scope="col" data-locale="en">en (default)</th>
+                    <th></th>
+                    <th scope="col" data-language="en">en (default)</th>
                 </tr>
             </thead>
             <tbody>
-
                 <tr class="table-tr">
+                    <td class="text-center">
+                        <button class="btn btn-danger disabled">Delete row</button>
+                    </td>
                     <td class="has-validation">
-                        <input type="text" onkeyup="onDefaultKeyInput(this)" data-row="1" data-locale="en" class="form-control" aria-describedby="row-1-default">
+                        <input type="text" onkeyup="onDefaultKeyInput(this)" data-row="1" data-language="en" class="form-control" aria-describedby="row-1-default">
                         <div id="row-1-default" class="invalid-feedback">
                             This key is already register.
                         </div>
@@ -104,7 +107,7 @@
                 <div class="modal-body">
                     <form id="import-data" enctype="multipart/form-data">
                         <div class="form-group">
-                            <label for="locale">Data to import (json)</label>
+                            <label for="language">Data to import (json)</label>
                             <input type="file" class="form-control" name="imported-data" id="imported-data">
                         </div>
                     </form>

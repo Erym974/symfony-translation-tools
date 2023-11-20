@@ -35,7 +35,7 @@ span[contenteditable=true] {
   background-color: rgba(0, 0, 0, 0.096);
 }
 
-.suggered-locales {
+.suggested-languages {
   display: flex;
   flex-wrap: wrap;
   margin-top: 5px;
@@ -45,6 +45,6 @@ span[contenteditable=true] {
   padding: 0;
   gap: 5px;
 }
-.suggered-locales li {
+.suggested-languages li {
   list-style: none;
 }/*# sourceMappingURL=style.css.map */
