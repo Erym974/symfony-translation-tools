@@ -34,3 +34,20 @@ span[contenteditable=true]{
     padding: 5px 20px;
     background-color: rgba(0, 0, 0, 0.096);
 }
+
+.suggered-locales {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5px;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    gap: 5px;
+    li {
+        list-style: none;
+        // padding: 5px;
+        // border-radius: 8px;
+        // background-color: rgb(194, 194, 194);
+    }
+}

@@ -3,9 +3,8 @@ let locales = [];
 
 $("#new-locale").on('submit', function(event) {
     event.preventDefault();
-
     let locale = $(event.target).serializeArray()[0].value;
-
+    $(event.target).find('input')[0].value = ""
     addLocale(locale);
 })
 
@@ -40,6 +39,10 @@ $(document).ready(function() {
     // initFixture()
 
 });
+
+function suggeredLocale(locale) {
+    $("#new-locale").find('input')[0].value = locale
+}
 
 function setDefaultLocal(locale){
     $(`[data-locale="${default_locale}"]`).each(function() {
@@ -190,15 +193,13 @@ function download(){
     let json = extractData();
 
     Object.entries(json).forEach(([key, value]) => {
-
+        const parsedKey = key.trim().replace(' ', '_');
+        if(!parsedKey) return alert("Some languages dosn't have a key");
         let content = "";
-
         Object.entries(value).forEach(([locale, value]) => {
             content += `${locale}: ${value} \n`;
         })
-    
         downloadFile(`messages.${key}.yaml`, content);
-
     })
     
 }
